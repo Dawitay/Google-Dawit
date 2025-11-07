@@ -14,6 +14,10 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Google Dawit",
   description: "Search Engine created by Dawit Ayele",
+  icons: {
+    icon: "/google.svg", // Path to your favicon in the public folder
+  },
+  
 };
 
 export default function RootLayout({ children }) {
