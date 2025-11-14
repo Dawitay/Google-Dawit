@@ -23,14 +23,9 @@ export const metadata = {
 
 export default function SearchLayout({ children }) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <SearchHeader/>
-        {children}
-
-      </body>
-    </html>
+    <div className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <SearchHeader />
+      {children}
+    </div>
   );
 }
