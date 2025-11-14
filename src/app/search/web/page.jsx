@@ -2,10 +2,12 @@ import WebSearchResults from '@/components/WebSearchResults';
 import Link from 'next/link';
 
 export default async function WebSearchPage({ searchParams }) {
+  const startIndex = searchParams.start || "1";
+
   const term = (await searchParams).searchTerm; // FIX: unwrap promise
 
   const response = await fetch(
-    `https://www.googleapis.com/customsearch/v1?key=${process.env.API_KEY}&cx=${process.env.CONTEXT_KEY}&q=${term}`
+    `https://www.googleapis.com/customsearch/v1?key=${process.env.API_KEY}&cx=${process.env.CONTEXT_KEY}&q=${term}&start=${startIndex}`
   );
 
   if (!response.ok) {
